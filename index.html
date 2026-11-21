@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOYDAN MAISON — Official House</title>
+<meta name="description" content="Soydan Maison — A legacy of elegance, crafted to endure.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#100e0e;
+  --wine:#38151e;
+  --wine2:#601e2d;
+  --gold:#c5a36a;
+  --cream:#eee7dd;
+  --muted:#b6aaa0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--cream);
+  font-family:'Montserrat',sans-serif;
+  font-weight:300;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+button{font:inherit}
+.topline{
+  text-align:center;padding:10px;
+  font-size:9px;letter-spacing:3px;
+  color:var(--gold);border-bottom:1px solid #ffffff12
+}
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 5%;border-bottom:1px solid #ffffff12;
+  position:relative;z-index:5;background:var(--black)
+}
+.brand{text-align:center;line-height:1}
+.brand .s{font-family:'Cormorant Garamond';font-size:28px;color:var(--gold)}
+.brand .name{font-family:'Cormorant Garamond';font-size:19px;letter-spacing:5px}
+.brand .maison{font-size:8px;letter-spacing:6px;color:var(--gold);margin-top:5px}
+nav{display:flex;gap:25px}
+nav a,.header-icons{font-size:9px;letter-spacing:2px;text-transform:uppercase}
+nav a:hover{color:var(--gold)}
+.header-icons{display:flex;gap:16px;color:var(--gold)}
+.menu-btn{display:none;background:none;border:0;color:var(--cream);font-size:20px}
+.hero{
+  min-height:620px;position:relative;display:flex;align-items:center;
+  background:
+    linear-gradient(90deg,#100e0e 0%,#100e0eaa 38%,transparent 80%),
+    url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=2000&q=85') center/cover;
+}
+.hero-content{padding:70px 8%;max-width:650px}
+.eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);margin-bottom:24px}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:clamp(48px,8vw,100px);line-height:.95;
+}
+.hero h1 em{font-weight:400;color:#d8b98a}
+.hero p{max-width:370px;margin-top:25px;line-height:2;font-size:12px;color:#ddd1c5}
+.btn{
+  display:inline-block;margin-top:35px;padding:15px 28px;
+  border:1px solid var(--gold);color:var(--gold);
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  transition:.3s
+}
+.btn:hover{background:var(--gold);color:var(--black)}
+.section{padding:90px 7%}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title .eyebrow{margin-bottom:12px}
+.section-title h2{
+  font:400 clamp(35px,5vw,58px) 'Cormorant Garamond',serif
+}
+.section-title p{font-size:11px;color:var(--muted);margin-top:12px;letter-spacing:1px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{position:relative;overflow:hidden;background:#201819}
+.card img{height:400px;transition:transform .7s;filter:brightness(.8)}
+.card:hover img{transform:scale(1.04)}
+.card-info{
+  position:absolute;bottom:0;left:0;right:0;padding:25px;
+  background:linear-gradient(transparent,#000b)
+}
+.card-info small{color:var(--gold);letter-spacing:3px;font-size:9px}
+.card-info h3{font:400 30px 'Cormorant Garamond',serif;margin-top:7px}
+.card-info a{font-size:9px;letter-spacing:2px;display:inline-block;margin-top:14px}
+.card-info a:hover{color:var(--gold)}
+.quote{
+  text-align:center;background:var(--wine);
+  padding:85px 8%;border-top:1px solid #c5a36a30;border-bottom:1px solid #c5a36a30
+}
+.quote h2{font:400 clamp(30px,5vw,52px) 'Cormorant Garamond',serif}
+.quote p{font-size:10px;letter-spacing:3px;color:var(--gold);margin-top:22px}
+.kate{
+  display:grid;grid-template-columns:1fr 1fr;min-height:500px;
+  background:#181313
+}
+.kate-img{
+  background:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85') center/cover;
+  min-height:500px
+}
+.kate-content{padding:70px 10%;display:flex;flex-direction:column;justify-content:center}
+.kate-content h2{font:400 48px 'Cormorant Garamond',serif}
+.kate-content h3{font-size:9px;letter-spacing:4px;color:var(--gold);font-weight:400;margin:18px 0}
+.kate-content p{font-size:12px;line-height:2;color:var(--muted);max-width:450px}
+.kate-content .btn{align-self:flex-start}
+.runway{
+  min-height:420px;display:flex;align-items:center;text-align:center;justify-content:center;
+  background:
+   linear-gradient(#140d0dbb,#140d0dbb),
+   url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=85') center/cover
+}
+.runway-inner{padding:60px 20px}
+.runway h2{font:400 clamp(45px,7vw,75px) 'Cormorant Garamond',serif}
+.runway p{font-size:10px;letter-spacing:4px;color:var(--gold);margin-top:15px}
+.journal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.journal-card img{height:330px}
+.journal-card h3{font:400 28px 'Cormorant Garamond',serif;margin-top:18px}
+.journal-card p{font-size:10px;color:var(--muted);line-height:1.8;margin-top:8px}
+.newsletter{background:#1c1515;text-align:center;padding:65px 20px}
+.newsletter h2{font:400 42px 'Cormorant Garamond',serif}
+.newsletter p{font-size:11px;color:var(--muted);margin:15px 0 25px}
+.newsletter input{
+  background:transparent;border:0;border-bottom:1px solid var(--gold);
+  padding:13px;color:white;width:min(320px,80vw);outline:none;font-size:11px
+}
+.newsletter button{
+  background:transparent;color:var(--gold);border:1px solid var(--gold);
+  padding:13px 18px;font-size:9px;letter-spacing:2px;margin-left:8px
+}
+footer{padding:40px 7%;text-align:center;border-top:1px solid #ffffff15}
+footer .brand{margin-bottom:25px}
+footer p{font-size:9px;letter-spacing:2px;color:var(--muted);line-height:2}
+footer .links{display:flex;justify-content:center;gap:20px;margin:20px 0;flex-wrap:wrap}
+footer .links a{font-size:9px;letter-spacing:2px;color:var(--gold)}
+footer .copyright{font-size:8px;margin-top:30px;color:#756b65}
+@media(max-width:800px){
+  header{padding:18px 5%}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;background:#171111;padding:25px;flex-direction:column;text-align:center}
+  nav.open{display:flex}
+  .menu-btn{display:block}
+  .header-icons{font-size:9px}
+  .hero{min-height:570px;background-position:60% center}
+  .hero-content{padding:55px 7%}
+  .cards{grid-template-columns:1fr;gap:15px}
+  .card img{height:420px}
+  .section{padding:65px 6%}
+  .kate{grid-template-columns:1fr}
+  .kate-img{min-height:420px}
+  .kate-content{padding:55px 8%}
+  .journal-grid{grid-template-columns:1fr}
+  .journal-card img{height:300px}
+  .newsletter button{margin:15px 0 0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topline">A LEGACY OF ELEGANCE, CRAFTED TO ENDURE</div>
+
+<header>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <div class="brand">
+    <div class="s">𝒮</div>
+    <div class="name">SOYDAN</div>
+    <div class="maison">MAISON</div>
+  </div>
+
+  <nav id="nav">
+    <a href="#collections">Collections</a>
+    <a href="#maison">The Maison</a>
+    <a href="#runway">Runway</a>
+    <a href="#atelier">Atelier</a>
+    <a href="#journal">Journal</a>
+  </nav>
+
+  <div class="header-icons">♡ &nbsp; ◌</div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">SOYDAN MAISON PRESENTS</div>
+    <h1>Vérité<br><em>Fall / Winter</em></h1>
+    <p>A study in contrasts. Where softness meets strength, and every silhouette tells a story of its own.</p>
+    <a href="#collections" class="btn">Explore the collection</a>
+  </div>
+</section>
+
+<section class="section" id="collections">
+  <div class="section-title">
+    <div class="eyebrow">THE ART OF DRESSING</div>
+    <h2>Current Collections</h2>
+    <p>Discover the world of Soydan Maison</p>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85" alt="Editorial fashion">
+      <div class="card-info">
+        <small>FALL / WINTER 2026</small>
+        <h3>Vérité</h3>
+        <a href="#runway">DISCOVER ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85" alt="Fashion collection">
+      <div class="card-info">
+        <small>READY-TO-WEAR</small>
+        <h3>Éclipse</h3>
+        <a href="#runway">DISCOVER ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=900&q=85" alt="Luxury couture">
+      <div class="card-info">
+        <small>HAUTE COUTURE</small>
+        <h3>La Femme</h3>
+        <a href="#atelier">DISCOVER ↗</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="quote">
+  <h2>“Elegance is never an accident.”</h2>
+  <p>IT IS ALWAYS A CHOICE.</p>
+</section>
+
+<section class="kate" id="maison">
+  <div class="kate-img"></div>
+  <div class="kate-content">
+    <div class="eyebrow">THE WOMAN BEHIND THE HOUSE</div>
+    <h2>Katarzyna Soydan</h2>
+    <h3>CREATIVE DIRECTION · THE SOYDAN LEGACY</h3>
+    <p>Guided by a vision of timeless beauty and uncompromising craftsmanship, Katarzyna Soydan carries the spirit of the Maison into a new era. A legacy shaped by ambition, artistry and a distinct point of view.</p>
+    <a class="btn" href="#journal">Discover her world</a>
+  </div>
+</section>
+
+<section class="section" id="atelier">
+  <div class="section-title">
+    <div class="eyebrow">BEHIND EVERY CREATION</div>
+    <h2>The Atelier</h2>
+    <p>Where imagination becomes an art of its own.</p>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=900&q=85" alt="Fashion atelier">
+      <div class="card-info"><small>CRAFT</small><h3>Made by hand</h3></div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85" alt="Fashion design">
+      <div class="card-info"><small>CREATION</small><h3>The process</h3></div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1598300056393-4aac7f4b5c5f?auto=format&fit=crop&w=900&q=85" alt="Couture">
+      <div class="card-info"><small>DETAIL</small><h3>Every stitch matters</h3></div>
+    </article>
+  </div>
+</section>
+
+<section class="runway" id="runway">
+  <div class="runway-inner">
+    <div class="eyebrow">AN INVITATION TO THE WORLD OF SOYDAN</div>
+    <h2>The Runway</h2>
+    <p>PARIS · MILAN · NEW YORK</p>
+    <a href="#journal" class="btn">Discover our events</a>
+  </div>
+</section>
+
+<section class="section" id="journal">
+  <div class="section-title">
+    <div class="eyebrow">NOTES FROM THE MAISON</div>
+    <h2>The Journal</h2>
+    <p>Stories, people and moments that shape our world.</p>
+  </div>
+
+  <div class="journal-grid">
+    <article class="journal-card">
+      <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=85" alt="Fashion editorial">
+      <h3>Behind the vision</h3>
+      <p>A glimpse into the creative world and inspirations of the Maison.</p>
+    </article>
+    <article class="journal-card">
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85" alt="Fashion model">
+      <h3>A new face, a new story</h3>
+      <p>Meet the faces who bring our vision to life.</p>
+    </article>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="eyebrow">LETTERS FROM SOYDAN</div>
+  <h2>Enter our world.</h2>
+  <p>Receive news, invitations and a glimpse into the Maison.</p>
+  <form onsubmit="newsletter(event)">
+    <input type="email" placeholder="Your email address" required>
+    <button type="submit">SUBSCRIBE</button>
+  </form>
+</section>
+
+<footer>
+  <div class="brand">
+    <div class="s">𝒮</div>
+    <div class="name">SOYDAN</div>
+    <div class="maison">MAISON</div>
+  </div>
+  <p>A LEGACY OF ELEGANCE, CRAFTED TO ENDURE.</p>
+  <div class="links">
+    <a href="#collections">COLLECTIONS</a>
+    <a href="#maison">THE MAISON</a>
+    <a href="#runway">RUNWAY</a>
+    <a href="#atelier">ATELIER</a>
+  </div>
+  <p class="copyright">© SOYDAN MAISON · ALL RIGHTS RESERVED</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('nav').classList.toggle('open');
+}
+function newsletter(e){
+  e.preventDefault();
+  alert('Thank you for joining the world of Soydan Maison.');
+}
+</script>
+</body>
+</html>
