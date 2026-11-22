@@ -427,4 +427,24 @@ window.toggleNav=function(){const nav=document.getElementById('nav');const btn=d
 })();
 </script>
 
+
+<!-- SOYDAN NAVIGATION RECOVERY -->
+<style id="soydan-navigation-recovery">
+@media(max-width:800px){
+ #portal button.mobile-menu{display:flex!important;position:fixed!important;top:10px!important;right:12px!important;z-index:1000!important;width:46px!important;height:46px!important;align-items:center!important;justify-content:center!important;background:rgba(12,6,8,.96)!important;border:1px solid var(--gold)!important;border-radius:2px!important;color:var(--cream)!important;font-size:22px!important;visibility:visible!important;opacity:1!important;box-shadow:0 4px 20px rgba(0,0,0,.35)!important}
+ #portal nav#nav{display:none!important;position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:999!important;width:100vw!important;height:auto!important;max-height:100dvh!important;padding:70px 22px 22px!important;overflow-y:auto!important;background:rgba(8,5,6,.98)!important;visibility:hidden!important;opacity:0!important}
+ #portal nav#nav.open{display:flex!important;visibility:visible!important;opacity:1!important}
+ #portal nav#nav button{display:block!important;min-height:48px!important;width:100%!important;text-align:left!important;font-size:12px!important;padding:14px 6px!important}
+ #portal .view.active{display:block!important}
+}
+</style>
+<script id="soydan-navigation-recovery-script">
+(function(){
+ function ensureMenu(){const portal=document.getElementById('portal');const nav=document.getElementById('nav');if(!portal||!nav)return;let btn=portal.querySelector('button.mobile-menu');if(!btn){btn=document.createElement('button');btn.className='iconbtn mobile-menu';btn.type='button';btn.textContent='☰';btn.setAttribute('aria-label','Abrir navegação');btn.setAttribute('aria-expanded','false');btn.onclick=window.toggleNav;portal.querySelector('.topbar')?.prepend(btn);}else{btn.onclick=window.toggleNav;}
+ nav.querySelectorAll('button[data-view]').forEach(b=>{if(!b.dataset.recoveryBound){b.dataset.recoveryBound='1';b.addEventListener('click',()=>{nav.classList.remove('open');btn.textContent='☰';btn.setAttribute('aria-expanded','false');});}});
+ }
+ const oldToggle=window.toggleNav;window.toggleNav=function(){const nav=document.getElementById('nav'),btn=document.querySelector('#portal button.mobile-menu');if(!nav)return;if(!btn&&oldToggle){oldToggle();return;}const opened=!nav.classList.contains('open');nav.classList.toggle('open',opened);if(btn){btn.textContent=opened?'✕':'☰';btn.setAttribute('aria-expanded',opened?'true':'false');btn.setAttribute('aria-label',opened?'Fechar navegação':'Abrir navegação');}};
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensureMenu);else ensureMenu();
+})();
+</script>
 </body></html>
